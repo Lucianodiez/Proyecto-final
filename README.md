@@ -11,6 +11,7 @@ https://www.un.org/es/un75/climate-crisis-race-we-can-win
 https://www.un.org/es/climatechange/science/causes-effects-climate-change
 https://github.com/cdavidbm/BotAPIVox
 https://free-apis.github.io/#/categories
+https://github.com/cdavidbm/BotEcologico-Full
 
 Planificacion : 
 Priemro comensar con el bot de discord que es el centro del codigo usandolo y programandolo de una forma ordenara y bonita (talvez poniendo capacidades de apis como saber a que clima y temperatura esa la ciudades si tengo tiempo) principalmente dando la informacion sobre el camcio climatico

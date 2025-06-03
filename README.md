@@ -1,10 +1,10 @@
-# Mi Idea de Proyecto  
+# Mi proyecto
 
-El proyecto se centrará en el **cambio climático** y sus consecuencias para el mundo y para nosotros, presentado de una forma seria pero también divertida para todo el mundo.
+Este proyecto se centrará en el **cambio climático** y sus consecuencias para el mundo y para nosotros, presentado de una forma seria pero también divertida para usar en un Bot de discord y creando memes hacerca de ello usando la programacion.
 
----
 
-## ¿Cómo se va a hacer? ⚙️
+
+## ¿Cómo se va a hacer? 
 
 Se desarrollará un **bot de Discord** que:
 
@@ -12,10 +12,13 @@ Se desarrollará un **bot de Discord** que:
 - Proporcionará información interesante sobre el cambio climático.
 - Enviará links para ver o crear memes graciosos relacionados con el tema.
 - Ofrecerá acceso a información más detallada y seria sobre el cambio climático.
+- Y podras realizar un **Examen** donde podras ver tu conocimientos hacera del tema
 
----
 
-## Links Importantes 🔗
+
+## Links Importantes 
+
+Aqui estan los links con los que desarrolle el proyecto :
 
 - [Generador de memes](https://github.com/cdavidbm/Kodland-PyPro-3.4---Generador-de-memes/blob/master/README.md)
 - [ONU: Crisis climática](https://www.un.org/es/un75/climate-crisis-race-we-can-win)
@@ -24,9 +27,9 @@ Se desarrollará un **bot de Discord** que:
 - [Free APIs](https://free-apis.github.io/#/categories)
 - [Bot Ecológico Full](https://github.com/cdavidbm/BotEcologico-Full)
 
----
 
-## Planificación 📅
+
+## Planificación de como se desarrollo el proyecto
 
 1. **Primero:** Comenzar con el bot de Discord, que será el núcleo del proyecto. Programarlo de forma ordenada y clara.  
    - Posiblemente integrar APIs para consultar el clima y temperatura de ciudades si el tiempo lo permite.  
@@ -38,11 +41,11 @@ Se desarrollará un **bot de Discord** que:
 3. **Finalmente:** Si hay tiempo, desarrollar una página web que reúna toda la información de forma seria.  
    - Si no, compartir enlaces de páginas ya existentes.
 
----
 
-## Cómo activar el proyecto ▶️
+## Cómo activar el proyecto 
 
-Ejecutar el bot con Python usando el nombre del archivo principal:
-
-```bash
+Ejecutar el bot y generador de memes se tiene que colocar (Para mi):
+-python nombre_del_archivo.py
+Para saber todas las cosas que puedes hablar con el bot tienes que colocar:
+!ayuda
 python nombre_del_archivo.py

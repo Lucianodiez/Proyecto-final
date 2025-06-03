@@ -46,6 +46,7 @@ Aqui estan los links con los que desarrolle el proyecto :
 
 Ejecutar el bot y generador de memes se tiene que colocar (Para mi):
 -python nombre_del_archivo.py
+
 Para saber todas las cosas que puedes hablar con el bot tienes que colocar:
 !ayuda
-python nombre_del_archivo.py
+

@@ -4,6 +4,7 @@ import requests
 import pyttsx3
 from Examen import obtener_pregunta_aleatoria
 
+Intentos = 0
 Puntos = 0
 intents = discord.Intents.default()
 intents.message_content = True
@@ -25,29 +26,37 @@ def get_weather(city):
  
 
 @bot.command()
+async def que_es(ctx):
+    await ctx.send(f'Puedes ver que es el cambio climatico en el proxinmo link https://www.un.org/es/un75/climate-crisis-race-we-can-win')
+    speak(f'Puedes ver que es el cambio climatico en el proxinmo link')
+
+@bot.command()
 async def meme(ctx):
     await ctx.send(f'En en link que ven podran ver y desarrollar memes de gran calidad http://127.0.0.1:5000!')
-    speak(f'En en link que ven podran ver y desarrollar memes de gran calidad http://127.0.0.1:5000!')
+    speak(f'En en link que ven podran ver y desarrollar memes de gran calidad ')
 
-
+@bot.command()
+async def Causas(ctx):
+    await ctx.send(f'Se pueden ver las causas en este link https://www.un.org/es/climatechange/science/causes-effects-climate-change')
+    speak(f'Se pueden ver las causas en este link ')
 
 @bot.command()
 async def ayuda(ctx):
     """Muestra una lista de comandos disponibles y su descripción."""
+    speak(f"Muestra una lista de comandos disponibles y su descripción.")
     embed = discord.Embed(
         title="Comandos Disponibles",
         description="Estos son los comandos que puedes utilizar:",
         color=0x1ABC9C
     )
-    embed.add_field(name="$hola", value="Saluda al bot.", inline=False)
-    embed.add_field(name="$clima", value="Obtiene información del estado del clima actual en una ciudad", inline=False)
-    embed.add_field(name="$ayuda", value="Muestra este mensaje de ayuda.", inline=False)
-    embed.add_field(name="$masinfo", value="Muestra enlaces para obtener mas información.", inline=False)
-    embed.add_field(name="$inundaciones", value="Muestra información sobre inundaciones relacionadas al cambio climático.", inline=False)
-    embed.add_field(name="$tornados", value="Muestra información sobre tornados extremos.", inline=False)
-    embed.add_field(name="$sequias", value="Muestra información sobre sequías prolongadas.", inline=False)
-    embed.add_field(name="$catastrofes", value="Muestra información sobre catástrofes climáticas.", inline=False)
-    embed.add_field(name="$trivia", value="Inicia un sencillo juego de trivia sobre cambio climático.", inline=False)
+    embed.add_field(name="!hola", value="Saluda al bot.", inline=False)
+    embed.add_field(name="!clima", value="Obtiene información del estado del clima actual en una ciudad", inline=False)
+    embed.add_field(name="!ayuda", value="Muestra este mensaje de ayuda.", inline=False)
+    embed.add_field(name="!Causas", value="Muestra enlaces para obtener mas información.", inline=False)
+    embed.add_field(name="!que_es", value="Un link para ver sobre que es el Cambio climatico", inline=False)
+    embed.add_field(name="!resultados", value="Muestra us resultas del examen", inline=False)
+    embed.add_field(name="!meme", value="Te emvia un link para hacer memes sobre el Cambio climatico", inline=False)
+    embed.add_field(name="!Examen", value="Inicia un sencillo Examen sobre cambio climático.", inline=False)
     await ctx.send(embed=embed)
 
 
@@ -63,7 +72,10 @@ def GET_weather(city: str) -> str:
 @bot.command()
 async def Examen(ctx): 
     global Puntos
-    """Inicia un Examen sobre el cambio climático."""
+    global Intentos
+    Intentos =+ 1
+    await ctx.send ("Inicia una de las pleguntas del Examen sobre el cambio climático.")
+    speak(f"Inicia una de las pleguntas del Examen sobre el cambio climático."")
     pregunta_actual = obtener_pregunta_aleatoria()
     
     embed = discord.Embed(
@@ -122,7 +134,8 @@ def speak(text):
 
 @bot.command()
 async def hola(ctx):
-    await ctx.send(f'Hola, soy un bot {bot.user}!')
+    await ctx.send(f'Hola, soy un bot {bot.user}!, y mi proposito es contarte admeas de hacer divertido aprender sobre el cambio Climatico ')
+    speak(weather_info)
 
 
 @bot.command()
@@ -130,6 +143,21 @@ async def weather(ctx, *, city):
     weather_info = get_weather(city) 
     await ctx.send(f"Clima en {city}: {weather_info}")
     speak(weather_info)
+
+@bot.command()
+async def resultados(ctx):
+    await ctx.send(f'Muy bien aqui te daremos lo resultados del examen , solo puedes saber el resultado despues de hacer todas las pleguntas')
+    speak("Muy bien aqui te daremos lo resultados del examen , solo puedes saber el resultado despues de hacer todas las pleguntas que son 5")
+    if Intentos < 5:
+        await ctx.send(f'Lo lammento pero no has respondido todas las pleguntas, te faltan' , 5-Intentos)
+        speak("Lo lammento pero no has respondido todas las pleguntas te faltan", 5-Intentos)
+    if Intentos => 5:
+        if Puntos < 3:
+            await ctx.send(f"Lo lammento pero te faltaron algunos puntos para pasar ")
+            speak("Lo lammento pero te faltaron algunos puntos para pasar ")
+        if Puntos > 4:
+            await ctx.send(f"Felicidades pasaste el examen lo hiciste muy bien ")
+            speak("Felicidades pasaste el examen lo hiciste muy bien ")
 
 
 bot.run("")
